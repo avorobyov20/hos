@@ -1,0 +1,30 @@
+name: Python package
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.10.6"
+    - name: Display Python version
+      run: python -c "import sys; print(sys.version)"
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r app/requirements.txt
+    - name: Run black
+      run: |
+        pip install black==22.3.0
+        black --line-length=79 --verbose --diff --check .
+    - name: Run flake8
+      run: |
+        pip install flake8==4.0.1
+        flake8 --verbose --max-line-length=79 --max-complexity=10

@@ -1,0 +1,37 @@
+.switch-toggle {
+   float: left;
+   background: #495057;
+}
+.switch-toggle input {
+  position: absolute;
+  opacity: 0;
+}
+.switch-toggle input + label {
+  padding: 14px;
+  float: left;
+  color: #848d96;
+  cursor: pointer;
+}
+.switch-toggle input:checked + label {
+    color: white;
+}
+
+
+.switch-toggle2 {
+   float: right;
+   background: #212429;
+}
+.switch-toggle2 input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+.switch-toggle2 input + label {
+    padding-top: 2px;
+    padding-left: 1.0rem;
+    float: left;
+    color: #495057;
+}
+.switch-toggle2 input:checked + label {
+    color: white;
+}

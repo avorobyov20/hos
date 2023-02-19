@@ -1,0 +1,60 @@
+version: '3.8'
+
+# Для локальной разработки. Запускает только Django и Postgres.
+# После каждого запуска контейнера db_dev будут выполняться миграции, см. entrypoint.sh
+# sudo docker-compose up -d --build
+
+# После первого запуска db_dev нужно вручную загрузить фикстуры
+# sudo docker-compose exec web_dev python manage.py loaddata db.json
+# pbkdf2_sha256$390000$1pJWhJnjYyCwJvD7TTiPFW$lpwPTlkG7CbXM6OC5+/mzMMIYMU5Bm4VaZpMjeYsVcs=
+
+services:
+
+  web_dev:
+    # Берем Dockerfile из каталога app (когда имя файла явно не задано, docker-compose ищет Dockerfile в указанном каталоге)
+    build: ./app
+
+    # Запускаем тестовый сервер
+    command: python manage.py runserver 0.0.0.0:8000
+
+    # Открываем порт 8000 внутри и снаружи
+    ports:
+      - 8000:8000
+    volumes:
+      - ./app/:/usr/src/app/
+
+    # Файл, содержащий значения переменных, которые будут использоваться в settings.py
+    env_file:
+      - ./.env.dev
+      # при запуске контейнера значения переменных, прописанные в .env.dev будут помещены в соответствующие переменные окружения,
+      # а Django (через библиотеку os.eviron) их из окружения прочитает и подставит куда нужно
+
+    # Дожидаемся запуска db_dev
+    depends_on:
+      - db_dev
+
+  db_dev:
+    # Образ и версия СУБД, версию можно поменять https://hub.docker.com/_/postgres/
+    image: postgres:13-alpine
+
+    # раздел ports нужен, чтобы можно было подключаться из DBeaver к базе, запущенной в контейнере
+    # указываем 5433, т.к. 5432 скорее всего будет занят локальным постгресом
+    ports:
+      - 5433:5432
+
+    # Внешний "Docker volume" и место где он будет подключен внутри контейнера, для хранения данных на случай пересоздания контейнера
+    volumes:
+      - postgres_dev_volume:/var/lib/postgresql/data/
+      # если не описать volumes для контейнера с базой, то каждое пересоздание контейнера будет приводить к уничтожению данных
+
+    environment:
+      # Учетные данные, которые будут использоваться при установке postgres
+      # Образ Postgres подхватит эти переменные
+      - POSTGRES_USER=django_user
+      - POSTGRES_PASSWORD=django_password
+      - POSTGRES_DB=django_db
+      # значения этих переменных должны совпадать с теми, которые прописаны в .env.dev
+      # т.к. Django тоже нужно знать какой логин, пароль и имя базы использует Postgres
+
+volumes:
+  postgres_dev_volume:

@@ -1,0 +1,248 @@
+/*
+
+#74d99f;
+
+#1a4971;
+#2368a2;
+#aad4f5;
+
+#1a645d;
+#6ed7d3;
+
+#db3030;
+
+#212429;
+#495057;
+#848d96;
+#adb5bd;
+#f1f3f5;
+
+#5b4712;
+#8c6d1f;
+#f4ca64;
+#fae29f;
+#fffcf4;
+
+*/
+
+.amazingaudioplayer-info div a {
+  color: #495057;
+  text-decoration: none;
+}
+
+.amazingaudioplayer-x {
+	box-sizing: border-box;
+	background-color: #212429; /*основной цвет*/
+	margin: 4px;
+	padding: 8px 4px;
+}
+
+.amazingaudioplayer-x div {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.amazingaudioplayer-x .amazingaudioplayer-image {
+	display: block;
+	position: relative;
+	float: left;
+	margin: 4px;
+	overflow: hidden;
+}
+
+.amazingaudioplayer-x .amazingaudioplayer-image img {
+	display: inline-block;
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+
+.amazingaudioplayer-x .amazingaudioplayer-image-clear {
+}
+
+.amazingaudioplayer-x .amazingaudioplayer-text {
+	display: block;
+	position: relative;
+	overflow: hidden;
+	padding: 4px;
+	height: 100%;
+}
+
+.amazingaudioplayer-x .amazingaudioplayer-text-clear {
+}
+
+.amazingaudioplayer-x .amazingaudioplayer-title {
+	display: block;
+	color: #f1f3f5; /*Заголовок*/
+	font-size: 1.0rem;
+	font-weight: bold;
+}
+
+.amazingaudioplayer-x .amazingaudioplayer-title-clear {
+}
+
+.amazingaudioplayer-x .amazingaudioplayer-info {
+	display: block;
+	color: #adb5bd; /* Исполнитель /// альбом */
+	font-size: 1.0rem;
+	font-style: italic;
+	margin-top: 0.62rem;
+}
+
+.amazingaudioplayer-x .amazingaudioplayer-info-clear {
+}
+
+.amazingaudioplayer-x .amazingaudioplayer-bar {
+	position: relative;
+	width: 100%;
+	min-height: 64px;
+	float: left;
+}
+
+.amazingaudioplayer-x .amazingaudioplayer-bar-buttons-clear {
+	clear: both;
+}
+
+.amazingaudioplayer-x .amazingaudioplayer-bar-clear {
+	clear: both;
+}
+
+.amazingaudioplayer-x .amazingaudioplayer-playpause {
+	position: absolute;
+	top: 0;
+	left: 40px;
+}
+
+.amazingaudioplayer-x .amazingaudioplayer-play {
+	position: relative;
+}
+
+.amazingaudioplayer-x .amazingaudioplayer-pause {
+	position: relative;
+}
+
+.amazingaudioplayer-x .amazingaudioplayer-stop {
+	position: relative;
+	float: left;
+}
+
+.amazingaudioplayer-x .amazingaudioplayer-prev {
+	position: absolute;
+	top: 0;
+	left: 0px;
+}
+
+.amazingaudioplayer-x .amazingaudioplayer-next {
+	position: absolute;
+	top: 0;
+	left: 80px;
+}
+
+.amazingaudioplayer-x .amazingaudioplayer-loop {
+	position: absolute;
+	top: 12px;
+	left: 124px;
+}
+
+.amazingaudioplayer-x .amazingaudioplayer-progress {
+	position: absolute;
+	top: 42px;
+	left: 0px;
+	right: 0px;
+	background-color: black; /*недокачанная часть файла*/
+	margin: 8px 4px;
+}
+
+.amazingaudioplayer-x .amazingaudioplayer-progress-loaded {
+	background-color: #495057; /*загруженная, но еще не воспроизведенная часть*/
+}
+
+.amazingaudioplayer-x .amazingaudioplayer-progress-played {
+	background-color: #db3030; /*воспроизведенная часть*/
+}
+
+.amazingaudioplayer-x .amazingaudioplayer-time {
+	position: relative;
+	float: right;
+	color: #f1f3f5; /* Время и надпись Loading...*/
+	font-size: 1.0rem;
+	line-height: 4rem;
+	margin: 0 4px;
+}
+
+.amazingaudioplayer-x .amazingaudioplayer-tracklist {
+	display: block;
+	position: relative;
+}
+
+.amazingaudioplayer-x .amazingaudioplayer-tracklist-container {
+	display: block;
+	position: relative;
+	margin: 4px;
+	padding: 8px 0px;
+}
+
+.amazingaudioplayer-x .amazingaudioplayer-tracks-wrapper {
+	position: relative;
+}
+
+.amazingaudioplayer-x .amazingaudioplayer-tracks {
+	position: relative;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.amazingaudioplayer-x .amazingaudioplayer-track-item {
+	position: relative;
+	cursor: pointer;
+	color: #848d96; /*неактивные треки в плейлисте*/
+	font-size: 1.0rem;
+	line-height: 1.62rem;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+}
+
+.amazingaudioplayer-x .amazingaudioplayer-track-item-active {
+	cursor: pointer;
+	color: #f1f3f5; /*активный трек в плейлисте*/
+}
+
+.amazingaudioplayer-x .amazingaudioplayer-track-item-duration {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.amazingaudioplayer-x .amazingaudioplayer-tracklist-arrow-prev {
+	position: absolute;
+	bottom: -5px;
+	left: 50%;
+	margin-left: -64px;
+}
+
+.amazingaudioplayer-x .amazingaudioplayer-tracklist-arrow-next {
+	position: absolute;
+	bottom: -5px;
+	left: 50%;
+	margin-left: 16px;
+}
+
+.amazingaudioplayer-x .amazingaudioplayer-tracklist-clear {
+	clear: both;
+}
+
+.amazingaudioplayer-x .amazingaudioplayer-item-id {
+	float: left;
+	width: 1.62rem;
+}
+
+.amazingaudioplayer-x .amazingaudioplayer-item-info {
+	float: right;
+}
+
+.amazingaudioplayer-x .amazingaudioplayer-item-title {
+	overflow: hidden;
+}

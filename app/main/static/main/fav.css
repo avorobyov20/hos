@@ -1,0 +1,14 @@
+.hos-fav {
+    opacity:0.08 !important;
+    color: #848d96 !important;
+}
+.hos-fav.hos-faved {
+    text-decoration: none;
+    color: #db3030 !important;
+    opacity:0.38 !important;
+}
+.hos-faved:hover {
+    text-decoration: none;
+    color: #db3030 !important;
+    opacity:0.19 !important;
+}

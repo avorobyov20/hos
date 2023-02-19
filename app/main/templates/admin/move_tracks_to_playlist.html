@@ -1,0 +1,18 @@
+{% extends "admin/base_site.html" %}
+
+{% block content %}
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <p>В плейлист будут добавлены следующие треки:</p>
+
+        <ul>
+            {% for track in tracks %}
+                <li>{{ track.get_html_full|safe }}</li><br>
+            {% endfor %}
+        </ul>
+
+        <input type="hidden" name="action" value="move_tracks_to_playlist" />
+        <input type="submit" name="apply" value="Сохранить" />
+    </form>
+{% endblock %}

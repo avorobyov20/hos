@@ -1,0 +1,125 @@
+{% load static %}
+{% load filtersandtags %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon"href="{% static 'favicon.ico' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>{% block title %}{% endblock %} - Hearts of Space clone</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'main/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'main/toggle.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'main/popupmodal.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'main/fav.css' %}">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script src="{% static 'audioplayerengine/amazingaudioplayer-patched.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'audioplayerengine/initaudioplayer.css' %}">
+    <script src="{% static 'audioplayerengine/initaudioplayer.js' %}"></script>
+    <script src="{% static 'index.js' %}"></script>
+</head>
+
+<body onpageshow="if (!!document.getElementById('hos-search')) hossearch_onkeyup((!!document.getElementById('hos-switch')) ? document.getElementById('hos-switch').querySelector('input:checked').nextElementSibling.getAttribute('for') : 'hos-switch-all');">
+
+    <div class="hos-topnav">
+
+        {% if request.path|startswith:'/accounts' or request.path|startswith:'/about' %}
+            <a id="hos-home-btn" href="{% url 'main:index' %}">На главную</a>
+        {% else %}
+            <input type="text" id="hos-search"
+                   onkeyup="hossearch_onkeyup(
+                           {% if user.is_authenticated %}
+                               document.getElementById('hos-switch').querySelector('input:checked').nextElementSibling.getAttribute('for')
+                           {% else %}
+                               'hos-switch-all'
+                           {% endif %});"
+                   placeholder="Найти..."
+            >
+            <div class="hos-dropdown-mega" onclick="toggleRubricsMenu();">
+                <button id="hos-subrubrics" class="hos-dropbtn subrubric_pk_0">{{ subrubric_name_all }}&nbsp;&nbsp;<i class="fa fa-caret-down"></i></button>
+                <div class="hos-dropdown-content">
+                    <div class="hos-row">
+                        {% for rubric in rubrics %}
+                            {% ifchanged rubric.super_rubric.pk %}
+                                {% if not forloop.first %}
+                                </div>
+                                {% endif %}
+                                <div class="hos-column">
+                                    <h3>{{ rubric.super_rubric.name }}</h3>
+                            {% endifchanged %}
+                            {% if rubric_pk == rubric.pk %}
+                                <a class="hos-active-gen" onclick="filter_subrubric(event, this, {{ rubric.pk }});" href>{{ rubric.name_cnt }}</a>
+                            {% else %}
+                                <a onclick="filter_subrubric(event, this, {{ rubric.pk }});" href>{{ rubric.name_cnt }}</a>
+                            {% endif %}
+                        {% endfor %}
+                        {% if rubrics %}
+                            {% if rubric_pk == 0 %}
+                                <a class="hos-active-gen" onclick="filter_subrubric(event, this, 0);" href>{{ subrubric_name_all }}</a>
+                            {% else %}
+                                <a onclick="filter_subrubric(event, this, 0);" href>{{ subrubric_name_all }}</a>
+                            {% endif %}
+                                </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <label id="hos-search-for" for="hos-search"></label>
+        {% endif %}
+
+
+        {% if user.is_authenticated and not request.path|startswith:'/accounts' and not request.path|startswith:'/about' %}
+            <div id="hos-switch" class="switch-toggle">
+                <input id="hos-switch-all" name="myRadios" type="radio" checked>
+                <label for="hos-switch-all" onclick="hossearch_onkeyup(this.getAttribute('for'));">&#10033;</label>
+                <input id="hos-switch-fav" name="myRadios" type="radio">
+                <label for="hos-switch-fav" onclick="hossearch_onkeyup(this.getAttribute('for'));" id="hos-switch-fav-lbl">&#10084;</label>
+            </div>
+        {% endif %}
+
+        <div class="hos-topnav-right">
+            {% if user.is_authenticated %}
+                <div class="hos-dropdown">
+                    <button class="hos-dropbtn">
+                        Профиль <b>{{ user.username }}</b>&nbsp;&nbsp;<i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="hos-dropdown-content">
+                        {% if user.username != "admin" %}
+                            <a href="/admin/main/playlist/">Мои плейлисты</a>
+                            <a href="{% url 'main:profile_change' %}">Изменить личные данные</a>
+                            <a href="{% url 'main:password_change' %}">Изменить пароль</a>
+                            <a href="{% url 'main:profile_delete' %}">Удалить аккаунт</a>
+                        {% endif %}
+                        <a href="{% url 'main:logout' %}">Выйти</a>
+                    </div>
+                </div>
+            {% else %}
+                <a href="{% url 'main:register' %}">Регистрация</a>
+                <a href="{% url 'main:password_reset' %}">Сброс пароля</a>
+                <a href="{% url 'main:login' %}">Вход</a>
+            {% endif %}
+            <a href="{% url 'main:other' page='about' %}">О сайте</a>
+        </div>
+    </div>
+
+    {% if messages %}
+        <!-- The Modal -->
+        <div id="popup-msg-modal-window" class="hos-popup-modal">
+            <!-- Modal content -->
+            <div class="hos-popup-modal-content">
+                <span class="hos-popup-modal-close-btn">&times;</span>
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

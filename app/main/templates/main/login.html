@@ -1,0 +1,23 @@
+{% extends "layout/basic.html" %}
+
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery=False %}
+
+{% block title %}Вход{% endblock %}
+
+{% block content %}
+    <div style="max-width: 270px; margin: auto; margin-top: 8rem;">
+        <h2>Вход</h2>
+        {% if user.is_authenticated %}
+            <p> {{ user.username }}, вы уже выполнили вход.</p>
+        {% else %}
+            <form method="post">
+                {% csrf_token %}
+                {% bootstrap_form form layout='horizontal' %}
+                <input type="hidden" name="next" value="{{ next }}">
+                {% buttons submit='Войти' %}{% endbuttons %}
+            </form>
+        {% endif %}
+    </div>
+{% endblock %}

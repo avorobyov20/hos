@@ -1,0 +1,7 @@
+Уважаемый пользователь {{ user.username }}!
+
+Поздравляем, Вы только что зарегистрировались на сайте spacemusic.space
+Чтобы активировать свою учетную запись, пройдите, пожалуйста, по ссылке
+http://spacemusic.space{% url 'main:register_activate' sign=sign %}
+
+С уважением, администрация сайта spacemusic.space

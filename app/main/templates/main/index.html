@@ -1,0 +1,58 @@
+{% extends "layout/basic.html" %}
+{% load filtersandtags %}
+
+{% block title %}Главная{% endblock %}
+
+{% block content %}
+    <div class="hos-sidenav">
+        <ul id="hos-menu">
+            {% if pls %}
+                {% for playlist in pls %}
+                    <li class="{% if playlist.pk == pl.pk %}
+                                   hos-active-pl {% if playlist.subrubric__name != "#" %}subrubric_pk_{{ playlist.subrubric }}{% endif %}
+                               {% else %}
+                                   {% if playlist.subrubric__name != "#" %}subrubric_pk_{{ playlist.subrubric }}{% endif %}
+                               {% endif %}">
+                        {% if user.is_authenticated and playlist.subrubric__name != "#" %}
+                            <a {% if user|in_favs:playlist.pk %}class="hos-fav hos-faved"{% else %} class="hos-fav"{% endif %}
+                               href="{% url 'main:fav' playlist_pk=playlist.pk %}" onclick="toggleFav(event, this);">&#10084;</a>
+                        {% endif %}
+                        <a id="playlist_pk_{{ playlist.pk }}" onclick="load_playlist(event, this);" href>{{ playlist.name }}</a></li>
+                {% endfor %}
+            {% endif %}
+        </ul>
+    </div>
+    {% if pls %}
+        <div class="hos-container" onclick="hideRubricsMenu();">
+            <div class="hos-container__left">
+                <div id="amazingaudioplayer-2" class="amazingaudioplayer-x" style="display:block;position:relative;width:100%;height:auto;margin:0px auto 0px;">
+                    <ul id="hos-playlist" class="amazingaudioplayer-audios" style="display:none;">
+                        {% for track in pl.tracks.all %}
+                            {% autoescape off %}
+                                <li data-artist="{{ track.artist|escape }}"
+                                    data-title="{{ track.title|escape }}"
+                                    data-album="{{ track.album|escape }}"
+                                    data-info="<a target=&apos;_blank&apos; href=&apos;/admin/main/pgm/{{ track.pgm.num }}/&apos;>{{ pl.name|escape }}</a>"
+                                    data-image="{{ track.cover.url }}"
+                                    data-duration="{{ track.duration }}">
+                                    <div class="amazingaudioplayer-source"
+                                         data-src="{{ track.get_audio_url }}"
+                                         data-type="audio/mpeg" />
+                                </li>
+                            {% endautoescape %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="hos-resizer" id="dragMe"></div>
+            <div class="hos-container__right">
+                <div>
+                    <h3>
+                        {{ pl.name }}<br>{{ pl.note }}
+                    </h3>
+                    {{ pl.intro|n2br }}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

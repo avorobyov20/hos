@@ -1,0 +1,315 @@
+/*
+
+#74d99f;
+
+#1a4971;
+#2368a2;
+#aad4f5;
+
+#1a645d;
+#6ed7d3;
+
+#db3030;
+
+#212429;
+#495057;
+#848d96;
+#adb5bd;
+#f1f3f5;
+
+#5b4712;
+#8c6d1f;
+#f4ca64;
+#fae29f;
+#fffcf4;
+
+*/
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #212429;
+  color: #848d96;
+  font-size: 16px;
+}
+
+a.linkbutton {
+  background: #1a645d;
+  color: #f1f3f5;
+  border: none;
+  font-size: 1rem;
+  padding: 1rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/*
+#hos-home-btn {
+  display: none;
+}
+*/
+
+button.btn.btn-primary {
+  background: #1a645d;
+  color: #f1f3f5;
+  border: none;
+  font-size: 1rem;
+  padding: 1rem 1rem;
+}
+
+div.col-md-9 {
+ margin-top: 0.25rem;
+}
+div.form-group.row {
+  margin-bottom: 1.38rem;
+}
+
+input {
+  font-size: 16px;
+  width: 100%;
+  padding: 8px;
+  background-color: #f1f3f5;
+  border: 0;
+}
+
+input::placeholder {
+  color: transparent;
+}
+
+#hos-search::placeholder {
+  color: #848d96;
+}
+
+#hos-search {
+  float: left;
+  background-color: #495057;
+  border: 0 solid #ccc;
+  outline: none;
+  color: white;
+  width: 320px;
+  margin: 0;
+  padding: 17px 16px;
+}
+#hos-search:focus {
+  background-color: #f1f3f5;
+  color: #848d96;
+}
+#hos-search-for {
+  float: left;
+  margin: 0;
+  padding: 17px 5px;
+  width: 52px;
+}
+#hos-switch {
+  float: left;
+}
+
+.hos-topnav {
+  overflow: hidden;
+  background-color: #495057;
+  z-index: 2; /* должно быть больше чем у .hos-sidenav */
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.hos-topnav a {
+  float: left;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.hos-topnav a, .hos-sidenav div.hos-sticker {
+  padding: 16px 16px;
+}
+
+.hos-dropbtn, div.hos-sticker {
+  font-size: 17px;
+}
+
+.hos-topnav-right {
+  float: right;
+}
+
+.hos-dropdown-mega, .hos-dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.hos-dropdown-mega .hos-dropbtn, .hos-dropdown .hos-dropbtn {
+  border: none;
+  outline: none;
+  color: white;
+  padding: 16px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.hos-topnav a:hover, .hos-dropdown-mega:hover .hos-dropbtn, .hos-dropdown:hover .hos-dropbtn {
+  background-color: #f1f3f5;
+  color: #495057;
+}
+.hos-dropdown-content {
+  display: none;
+  background-color: white;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.hos-dropdown-mega .hos-dropdown-content {
+  width: 100%;
+  left: 0;
+}
+
+.hos-dropdown-content a {
+  float: none;
+  color: #495057;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.hos-dropdown-content a:hover {
+  background-color: #f1f3f5;
+}
+
+/*
+.hos-dropdown-mega:hover .hos-dropdown-content, .hos-dropdown:hover .hos-dropdown-content {
+  display: block;
+  position: fixed;
+}
+*/
+
+.hos-dropdown:hover .hos-dropdown-content {
+  display: block;
+  position: fixed;
+}
+
+/* Create four equal columns that floats next to each other */
+.hos-column {
+  float: left;
+  width: 25%;
+  padding-left: 8px;
+  padding-bottom: 8px;
+}
+
+.hos-column h3 {
+  color: #212429;
+}
+
+.hos-column a {
+  float: none;
+  color: #495057;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.hos-sidenav {
+  padding: 2px 8px 8px 8px;
+  top: 50px;
+  width: 320px;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  bottom: 0; /*если убрать, то исчезнет полоса прокрутки у sidebar*/
+  overflow-x: hidden;
+  background-color: #212429;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 1200px) {
+  .hos-column {
+    width: 50%;
+    height: auto;
+  }
+}
+
+.hos-container {
+  display: flex;
+  height: 100%;
+  margin-top: 40px;
+  margin-left: 320px; /* Same as the width of the hos-sidenav */
+}
+
+.hos-container__left {
+  display: flex;
+  width: 38%;
+  margin-top: 10px;
+}
+
+.hos-resizer {
+  background-color: transparent;
+  cursor: ew-resize;
+  bottom: 0;
+  width: 0.62rem; /* такая же толщина у полоски воспроизведения */
+  background-image: linear-gradient(#495057, transparent 38%);
+}
+
+.hos-container__right {
+  display: flex;
+  flex: 1;
+  padding: 8px;
+}
+.hos-container__right div h3{
+  color: #f1f3f5;
+}
+
+
+/* Style the navigation menu inside the left column */
+#hos-menu {
+  list-style-type: none;
+  white-space: nowrap;
+  padding: 0;
+  margin: 0;
+}
+
+#hos-menu li a {
+  padding: 8px;
+  text-decoration: none;
+  color: #848d96;
+  display: inline-block;
+}
+
+#hos-menu li a:hover {
+  color: #f1f3f5;
+}
+
+.hos-active-gen {
+  background-image: linear-gradient(to right, rgba(173, 181, 189, 0.38), transparent 38%); /*#adb5bd*/
+}
+
+.hos-active-pl a {
+  color: #fae29f !important;
+}
+
+.hos-row {
+  margin-right: 8px;
+}
+
+.hos-sidenav .hos-sticker {
+  color: #495057;
+}
+
+.hos-sidenav div.hos-sticker {
+  background-image: linear-gradient(to right, rgba(26, 100, 93, 0.38), transparent 38%);
+}
+
+.hos-my {
+  font-size: 11px;
+  font-style: italic;
+  color: #f1f3f5;
+  background-color: #495057;
+}
+.amazingaudioplayer-title .hos-my {
+  display: none;
+}

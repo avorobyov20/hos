@@ -1,0 +1,80 @@
+version: '3.8'
+
+# Для запуска на релизных версиях.
+# Запускает сервисы Django/Gunicorn, Postgres и Nginx(на 1337 порту) в трех контейнерах.
+
+# В отличие от образа для разработки, после первого запуска контейнера db
+# нужно вручную выполнить миграции и collectstatic
+
+# sudo docker-compose -f docker-compose.prod.yml up -d --build
+# sudo docker-compose -f docker-compose.prod.yml exec web python manage.py migrate --noinput
+# sudo docker-compose -f docker-compose.prod.yml exec web python manage.py collectstatic --no-input --clear
+# Также после первого запуска db нужно загрузить фикстуры
+# sudo docker-compose -f docker-compose.prod.yml exec web python manage.py loaddata db.json
+
+# Каждый http запрос в первую очередь обрабатывается сервером Nginx, который определяет тип запроса.
+# Статические запросы Nginx обрабатывает самостоятельно, а динамические - перенаправляет к Gunicorn.
+# Сам Gunicorn, как и библиотеку psycopg2 нужно добавить в requirements.txt
+
+services:
+  web:
+    # Берем Dockerfile.prod из каталога app
+    build:
+       context: ./app
+       dockerfile: Dockerfile.prod
+    # Запускаем через gunicorn скрипт wsgi.py(создается автоматически в папке django_project)
+    command: gunicorn django_project.wsgi:application --bind 0.0.0.0:8000
+
+    # Поскольку при наличии Nginx, мы не будем обращаться к Django напрямую,
+    # то закроем доступ к Django через перенаправление портов.
+    # Чтобы разрешить обращаться к Django только сервисам докера
+    # достаточно заменить 'ports' на 'expose' 8000 (см. файл nginx.conf)
+    expose:
+      - 8000
+    # Подключаем статические и медиа файлы
+    volumes:
+      - static_volume:/home/app/web/static
+      - media_volume:/home/app/web/media
+    env_file:
+      - ./.env.prod
+    # Дожидаемся запуска db
+    depends_on:
+      - db
+
+  db:
+    # Образ и версия СУБД, версию можно поменять https://hub.docker.com/_/postgres/
+    image: postgres:13-alpine
+
+    # раздел ports нужен, чтобы можно было подключаться из DBeaver к базе, запущенной в контейнере
+    # указываем 5434, т.к. 5432 скорее всего будет занят локальным постгресом, а 5433 занят контейнером db_dev
+    ports:
+      - 5434:5432
+
+    # Внешний "Docker volume" и место где он будет подключен внутри контейнера, для хранения данных на случай пересоздания контейнера
+    volumes:
+      - postgres_volume:/var/lib/postgresql/data/
+    # Пока не понятно зачем выделять несколько переменных в отдельный
+    # файл .env.prod.db, а не использовать тот же самый файл .env.prod
+    env_file:
+      - ./.env.prod.db
+
+  # Nginx будет работать со статическими файлами и будет обращаться к Gunicorn
+  nginx:
+    # В этой папке будет храниться конфигурационный файл (nginx.conf) и Dockerfile для контейнера nginx
+    build: ./nginx
+    # Подключаем статические и медиа файлы
+    volumes:
+      - static_volume:/home/app/web/static
+      - media_volume:/home/app/web/media
+    # Открываем порт 1337 для посетителей и
+    # перенаправляем с него на 80 порт nginx (см. файл nginx.conf)
+    ports:
+      - 1337:80
+    depends_on:
+      - web
+      # то есть контейнеры должны запускаться в таком порядке: db - web - nginx
+
+volumes:
+  postgres_volume:
+  static_volume:
+  media_volume:
