@@ -1,0 +1,27 @@
+---
+# Действия, необходимые для загрузки и запуска приложения
+
+
+# git clone --branch master https://github.com/avorobyov20/hos.git
+- name: Clone master branch of hos repo
+  ansible.builtin.git:
+    repo: "{{ hos_repo_url }}"
+    dest: "/home/{{ remote_user }}/hos"
+    single_branch: yes
+    version: "{{ hos_repo_version }}"
+  tags:
+    - hos
+
+# Разворачиваем контейнеризированное приложение
+- name: Run app
+  shell: |
+    cd "/home/{{ remote_user }}/hos/"
+    sudo echo "CSRF_TRUSTED_ORIGINS=http://localhost:1337 http://{{ ansible_host }}:1337 http://{{ site_name }}:1337 https://{{ site_name }}:1337" >> .env.prod
+    sudo docker-compose -f docker-compose.prod.yml down -v
+    sudo docker-compose -f docker-compose.prod.yml up -d --build
+    sudo docker-compose -f docker-compose.prod.yml exec web python manage.py migrate --noinput
+    sudo docker-compose -f docker-compose.prod.yml exec web python manage.py collectstatic --no-input --clear
+    sudo docker-compose -f docker-compose.prod.yml exec web python manage.py loaddata db.json
+    sudo docker-compose -f docker-compose.prod.yml exec web python manage.py create_user
+  tags:
+    - hos

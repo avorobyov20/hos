@@ -12,6 +12,12 @@ lsb_release -a
 Docker for Windows/ Settings/ Resources/ WSL Integration/ Enable integration with additional distros [On] Ubuntu
 
 sudo apt update && sudo apt upgrade -y
+
+sudo apt install tree
+sudo apt-add-repository ppa:ansible/ansible
+sudo apt-get update
+sudo apt-get install ansible
+
 sudo apt install python3-pip
 sudo pip install pre-commit
 
@@ -19,6 +25,10 @@ pre-commit --version
 
 git clone --branch master https://github.com/avorobyov20/hos.git
 cd hos
+
+git config --global user.name "Артем Воробьев"
+git config --global user.email "avorobyov2@gmail.com"
+
 pre-commit install
 pre-commit run --all-files
 

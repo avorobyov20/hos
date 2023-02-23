@@ -135,3 +135,7 @@ THUMBNAIL_ALIASES = {
 
 if environ.get("CSRF_TRUSTED_ORIGINS"):
     CSRF_TRUSTED_ORIGINS = environ.get("CSRF_TRUSTED_ORIGINS").split(" ")
+else:
+    CSRF_TRUSTED_ORIGINS = [
+        "http://localhost:1337",
+    ]
