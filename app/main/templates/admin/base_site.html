@@ -6,6 +6,20 @@
     <link rel="stylesheet" href="/static/css/tinyPlayer.css">
 {% endblock %}
 
+{% block branding %}
+    <h1>
+        <span id="site-name">
+            <a href="{% url 'admin:index' %}">{{ site_header|default:_('Django administration') }}</a>
+        </span>
+    </h1>
+{% endblock %}
+
+{% block extrahead %}
+       {% if version and release_url and release_date %}
+    <h3>Релиз: <a href="{% url 'admin:release' %}">{{version}} от: {{release_date|date:'Y-m-d'}}</a></h3>
+    {% endif %}
+{% endblock %}
+
 {% block footer %}
     {{ block.super }}
     {% comment %}

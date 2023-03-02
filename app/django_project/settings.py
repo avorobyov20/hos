@@ -33,7 +33,8 @@ DATABASES = {
 }
 
 INSTALLED_APPS = [
-    "django.contrib.admin",
+    "main.admin_config.MainAdminConfig",
+    #  "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
@@ -139,3 +140,6 @@ else:
     CSRF_TRUSTED_ORIGINS = [
         "http://localhost:1337",
     ]
+
+SERVICE_NAME = "Основной модуль"
+HOST_NAME = "Тест"
