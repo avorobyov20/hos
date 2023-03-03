@@ -137,15 +137,14 @@ const config = {
             "section": "🧪 Тестирование",
             "hidden": false
           }
-        ],
-        "issueUrlFormat": "https://github.com/yourlogin/yourrepo/issues/{{id}}"
+        ]
       }
     }
   ],
   "prepare": [
     {
       "path": "@semantic-release/exec",
-      "prepareCmd": 'echo "version=\"${nextRelease.version}\"\nrelease_url=\"https://github.com/yourlogin/yourrepo/releases/tag/${nextRelease.version}\"\nrelease_date=${new Date().toISOString()}" > app/version.toml'
+      "prepareCmd": 'echo "version=\"${nextRelease.version}\"\nrelease_url=\"https://github.com/avorobyov20/hos/releases/tag/${nextRelease.version}\"\nrelease_date=${new Date().toISOString()}" > app/version.toml'
     },
     {
       "path": "@semantic-release/changelog",
