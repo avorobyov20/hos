@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/avorobyov20/hos/compare/1.0.4...1.0.5) (2023-03-03)
+
+
+### 🛠 Исправления
+
+* тест системы версионирования ([dcd9f2c](https://github.com/avorobyov20/hos/commit/dcd9f2ca81f5eb651f83b463e3566c4be34a250a))
+
 ## [1.0.4](https://github.com/avorobyov20/hos/compare/1.0.3...1.0.4) (2023-03-03)
 
 
