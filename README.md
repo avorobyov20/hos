@@ -1,6 +1,7 @@
 wsl --status
 # Default Version: 2
 
+
 Docker for Windows/ Settings/ Resources/ WSL Integration/ Enable integration with additional distros [Off] Ubuntu
 
 wsl --unregister Ubuntu
