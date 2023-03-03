@@ -145,7 +145,7 @@ const config = {
   "prepare": [
     {
       "path": "@semantic-release/exec",
-      "prepareCmd": 'echo "version=\"${nextRelease.version}\"\nrelease_url=\"https://github.com/yourlogin/yourrepo/releases/tag/${nextRelease.version}\"\nrelease_date=${new Date().toISOString()}" > version.toml'
+      "prepareCmd": 'echo "version=\"${nextRelease.version}\"\nrelease_url=\"https://github.com/yourlogin/yourrepo/releases/tag/${nextRelease.version}\"\nrelease_date=${new Date().toISOString()}" > app/version.toml'
     },
     {
       "path": "@semantic-release/changelog"
@@ -154,8 +154,8 @@ const config = {
       "path": "@semantic-release/git",
       "message": 'Релиз: ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}',
       "assets": [
-        "CHANGELOG.md",
-        "version.toml"
+        "app/CHANGELOG.md",
+        "app/version.toml"
       ]
     }
   ],
