@@ -7,7 +7,7 @@ const config = {
   "dryRun": false,
   "tagFormat": "${version}",
   "preset": "conventionalcommits",
-  "githubUrl": "https://github.com/",
+  "githubUrl": "https://github.com",
   "verifyConditions": [
     "@semantic-release/changelog",
     "@semantic-release/git",
