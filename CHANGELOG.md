@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/avorobyov20/hos/compare/1.0.3...1.0.4) (2023-03-03)
+
+
+### 🛠 Исправления
+
+* githubUrl ([a4ef8ef](https://github.com/avorobyov20/hos/commit/a4ef8ef444f1c1e3b0f8887047a98850ce5b5ef5))
+
 ## [1.0.3](https://github.com/avorobyov20/hos/compare/1.0.2...1.0.3) (2023-03-03)
 
 
