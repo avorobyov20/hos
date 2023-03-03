@@ -1,3 +1,10 @@
+## [1.0.8](https://github.com/avorobyov20/hos/compare/1.0.7...1.0.8) (2023-03-03)
+
+
+### 🛠 Исправления
+
+* добавлен параметр changelogFile ([e0544b7](https://github.com/avorobyov20/hos/commit/e0544b76049c7c435e85ad950afe40c88c7f7b7f))
+
 ## [1.0.1](https://github.com/avorobyov20/hos/compare/v1.0.0...v1.0.1) (2023-03-03)
 
 
