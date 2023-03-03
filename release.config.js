@@ -148,7 +148,8 @@ const config = {
       "prepareCmd": 'echo "version=\"${nextRelease.version}\"\nrelease_url=\"https://github.com/yourlogin/yourrepo/releases/tag/${nextRelease.version}\"\nrelease_date=${new Date().toISOString()}" > app/version.toml'
     },
     {
-      "path": "@semantic-release/changelog"
+      "path": "@semantic-release/changelog",
+      "changelogFile": "app/CHANGELOG.md"
     },
     {
       "path": "@semantic-release/git",
