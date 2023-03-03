@@ -17,3 +17,5 @@ soupsieve==2.3.2.post1
 sqlparse==0.4.3
 tzdata==2022.4
 urllib3==1.26.12
+toml==0.10.2
+markdown==3.4.1
