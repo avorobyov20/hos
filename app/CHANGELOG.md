@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/avorobyov20/hos/compare/v1.0.0...v1.0.1) (2023-03-03)
+
+
+### fix
+
+* тест автоматического версионирования ([5e30d6b](https://github.com/avorobyov20/hos/commit/5e30d6bfa4f3c700a3e793856c6b9792099c57a8))
+
 ## [1.6.1](http://gl.pkzdrav.ru/zdraw/core-backend/compare/1.6.0...1.6.1) (2023-01-27)
 
 
