@@ -1,3 +1,10 @@
+## [1.0.12](https://github.com/avorobyov20/hos/compare/1.0.11...1.0.12) (2023-03-06)
+
+
+### 🛠 Исправления
+
+* тест вебхука в дженкинс ([c35a092](https://github.com/avorobyov20/hos/commit/c35a0924f4904eddfba40dfc648c879d742d164d))
+
 ## [1.0.11](https://github.com/avorobyov20/hos/compare/1.0.10...1.0.11) (2023-03-03)
 
 
