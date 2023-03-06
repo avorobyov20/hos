@@ -1,3 +1,10 @@
+## [1.0.13](https://github.com/avorobyov20/hos/compare/1.0.12...1.0.13) (2023-03-06)
+
+
+### 🛠 Исправления
+
+* тест веб хука ([62e5384](https://github.com/avorobyov20/hos/commit/62e538479eb99f42795ff7dc3aed228dfd6fe4c0))
+
 ## [1.0.12](https://github.com/avorobyov20/hos/compare/1.0.11...1.0.12) (2023-03-06)
 
 
