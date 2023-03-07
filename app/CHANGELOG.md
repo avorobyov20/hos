@@ -1,3 +1,10 @@
+## [1.0.16](https://github.com/avorobyov20/hos/compare/1.0.15...1.0.16) (2023-03-07)
+
+
+### 🛠 Исправления
+
+* тест вебхук на jenkins должен сработать ([0fcd63a](https://github.com/avorobyov20/hos/commit/0fcd63a23973893a0b479fc37b3fc49e2eb01578))
+
 ## [1.0.15](https://github.com/avorobyov20/hos/compare/1.0.14...1.0.15) (2023-03-06)
 
 
