@@ -1,3 +1,10 @@
+## [1.0.18](https://github.com/avorobyov20/hos/compare/1.0.17...1.0.18) (2023-03-07)
+
+
+### 🛠 Исправления
+
+* тест ([70cb74d](https://github.com/avorobyov20/hos/commit/70cb74d2faa6886d4df094b2ce43c17319850d20))
+
 ## [1.0.17](https://github.com/avorobyov20/hos/compare/1.0.16...1.0.17) (2023-03-07)
 
 
