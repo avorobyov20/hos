@@ -1,3 +1,10 @@
+## [1.0.17](https://github.com/avorobyov20/hos/compare/1.0.16...1.0.17) (2023-03-07)
+
+
+### 🛠 Исправления
+
+* test web hook ([26a83c4](https://github.com/avorobyov20/hos/commit/26a83c4f1d69ff6240fa7f15ad70ec1063401390))
+
 ## [1.0.16](https://github.com/avorobyov20/hos/compare/1.0.15...1.0.16) (2023-03-07)
 
 
