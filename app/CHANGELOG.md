@@ -1,3 +1,10 @@
+## [1.0.24](https://github.com/avorobyov20/hos/compare/1.0.23...1.0.24) (2023-03-09)
+
+
+### 🛠 Исправления
+
+* sparse ([c8f69aa](https://github.com/avorobyov20/hos/commit/c8f69aaded8921b4680c5f01bd957fe00131cb0d))
+
 ## [1.0.23](https://github.com/avorobyov20/hos/compare/1.0.22...1.0.23) (2023-03-08)
 
 
