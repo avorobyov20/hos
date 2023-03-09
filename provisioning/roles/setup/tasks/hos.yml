@@ -3,15 +3,15 @@
 
 
 # git clone --branch master https://github.com/avorobyov20/hos.git
-- name: "Clone {{ hos_repo_version }} branch of hos repo"
-  ansible.builtin.git:
-    repo: "{{ hos_repo_url }}"
-    dest: "/home/{{ remote_user }}/hos"
-    single_branch: yes
-    force: yes
-    version: "{{ hos_repo_version }}"
-  tags:
-    - hos
+#- name: "Clone {{ hos_repo_version }} branch of hos repo"
+#  ansible.builtin.git:
+#    repo: "{{ hos_repo_url }}"
+#    dest: "/home/{{ remote_user }}/hos"
+#    single_branch: yes
+#    force: yes
+#    version: "{{ hos_repo_version }}"
+#  tags:
+#    - hos
 
 # Разворачиваем контейнеризированное приложение
 - name: Run app
