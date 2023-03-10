@@ -160,5 +160,5 @@ else:
         "http://localhost:1337",
     ]
 
-SERVICE_NAME = "HOS"
+SERVICE_NAME = "HOS Admin"
 HOST_NAME = "Slow music for fast times"
