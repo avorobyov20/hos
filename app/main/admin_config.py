@@ -15,8 +15,7 @@ from django.urls import path
 
 
 class CustomAdmin(admin.AdminSite):
-    site_title = "ПК Здравоохранение"
-    site_header = f"МИС ПК Здравоохранение - {settings.HOST_NAME}"
+    site_header = f"Hearts of Space clone - {settings.HOST_NAME}"
     index_title = f"Администрирование {settings.SERVICE_NAME}"
 
     def __init__(self, *args, **kwargs):
