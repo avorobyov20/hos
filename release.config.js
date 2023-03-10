@@ -138,7 +138,7 @@ const config = {
             "hidden": false
           }
         ],
-        "issueUrlFormat": "https://xxx.atlassian.net/#/Task/{{id}}"
+        "issueUrlFormat": "https://my.atlassian.net/#/Task/{{id}}"
       }
     }
   ],
