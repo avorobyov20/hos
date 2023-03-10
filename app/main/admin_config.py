@@ -15,8 +15,8 @@ from django.urls import path
 
 
 class CustomAdmin(admin.AdminSite):
-    site_header = f"{settings.HOST_NAME}"
-    index_title = f"{settings.SERVICE_NAME}"
+    site_header = f"{settings.SLOGAN}"
+    index_title = f"{settings.INDEX_TITLE}"
 
     def __init__(self, *args, **kwargs):
         self.version_file = "version.toml"
