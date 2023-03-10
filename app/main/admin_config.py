@@ -20,7 +20,7 @@ class CustomAdmin(admin.AdminSite):
     index_title = f"Администрирование {settings.SERVICE_NAME}"
 
     def __init__(self, *args, **kwargs):
-        self.version_file = "/home/app/web/version.toml"
+        self.version_file = "version.toml"
         self.changelog_file = "CHANGELOG.md"
         super().__init__(*args, **kwargs)
 
