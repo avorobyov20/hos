@@ -65,8 +65,7 @@ const config = {
           "type": "test",
           "release": false
         }
-      ],
-      issueUrlFormat: 'https://issuelog.io/#/Task/{{id}}'
+      ]      
     }
   ],
   "generateNotes": [
@@ -138,7 +137,8 @@ const config = {
             "section": "🧪 Тестирование",
             "hidden": false
           }
-        ]
+        ],
+        "issueUrlFormat": "https://xxx.atlassian.net/#/Task/{{id}}"
       }
     }
   ],
