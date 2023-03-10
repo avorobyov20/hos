@@ -1,3 +1,10 @@
+## [1.0.31](https://github.com/avorobyov20/hos/compare/1.0.30...1.0.31) (2023-03-10)
+
+
+### 🛠 Исправления
+
+* LOGGING ([542e0fc](https://github.com/avorobyov20/hos/commit/542e0fc9b2029c3b3ddae8004cdd2e4d5e3c4bb0))
+
 ## [1.0.30](https://github.com/avorobyov20/hos/compare/1.0.29...1.0.30) (2023-03-10)
 
 
