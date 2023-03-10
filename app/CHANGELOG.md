@@ -1,3 +1,10 @@
+## [1.0.32](https://github.com/avorobyov20/hos/compare/1.0.31...1.0.32) (2023-03-10)
+
+
+### 🛠 Исправления
+
+* /home/app/web/version.toml ([16aae06](https://github.com/avorobyov20/hos/commit/16aae064ddb06a25aed026601df24e8cbe62b2be))
+
 ## [1.0.31](https://github.com/avorobyov20/hos/compare/1.0.30...1.0.31) (2023-03-10)
 
 
