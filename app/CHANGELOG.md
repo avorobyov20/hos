@@ -1,3 +1,10 @@
+## [1.0.35](https://github.com/avorobyov20/hos/compare/1.0.34...1.0.35) (2023-03-10)
+
+
+### 🛠 Исправления
+
+* [#12346](https://xxx.atlassian.net/#/Task/12346) issueUrlFormat ([a566b81](https://github.com/avorobyov20/hos/commit/a566b81d49700affed999473653952a5b19800b0))
+
 ## [1.0.34](https://github.com/avorobyov20/hos/compare/1.0.33...1.0.34) (2023-03-10)
 
 
