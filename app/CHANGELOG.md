@@ -1,3 +1,10 @@
+## [1.0.33](https://github.com/avorobyov20/hos/compare/1.0.32...1.0.33) (2023-03-10)
+
+
+### 🛠 Исправления
+
+* toml ([4a6ee78](https://github.com/avorobyov20/hos/commit/4a6ee78a55f4f4a30402eec9066ba3d18470739c))
+
 ## [1.0.32](https://github.com/avorobyov20/hos/compare/1.0.31...1.0.32) (2023-03-10)
 
 
