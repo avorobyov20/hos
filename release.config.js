@@ -65,7 +65,8 @@ const config = {
           "type": "test",
           "release": false
         }
-      ]
+      ],
+      issueUrlFormat: 'https://issuelog.io/#/Task/{{id}}'
     }
   ],
   "generateNotes": [
