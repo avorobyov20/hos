@@ -1,3 +1,10 @@
+## [1.0.40](https://github.com/avorobyov20/hos/compare/1.0.39...1.0.40) (2023-03-10)
+
+
+### 🛠 Исправления
+
+* изменен заголовок админки ([25c6d74](https://github.com/avorobyov20/hos/commit/25c6d7414000b41ce7a04d7e531416d455631e18))
+
 ## [1.0.39](https://github.com/avorobyov20/hos/compare/1.0.38...1.0.39) (2023-03-10)
 
 
