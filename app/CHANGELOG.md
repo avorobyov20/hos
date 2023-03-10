@@ -1,3 +1,10 @@
+## [1.0.34](https://github.com/avorobyov20/hos/compare/1.0.33...1.0.34) (2023-03-10)
+
+
+### 🛠 Исправления
+
+* [#12345](https://github.com/avorobyov20/hos/issues/12345) restore issueUrl string ([18baafe](https://github.com/avorobyov20/hos/commit/18baafe5fb5c8d27bda25ab5ffa5b2cf4ecffc4e))
+
 ## [1.0.33](https://github.com/avorobyov20/hos/compare/1.0.32...1.0.33) (2023-03-10)
 
 
