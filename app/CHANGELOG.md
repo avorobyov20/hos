@@ -1,3 +1,10 @@
+## [1.0.29](https://github.com/avorobyov20/hos/compare/1.0.28...1.0.29) (2023-03-10)
+
+
+### 🛠 Исправления
+
+* удаляем концевые пробелы и переводы строки ([cb7603a](https://github.com/avorobyov20/hos/commit/cb7603abffe3599f706c7ea45904d62f914e02cb))
+
 ## [1.0.28](https://github.com/avorobyov20/hos/compare/1.0.27...1.0.28) (2023-03-10)
 
 
