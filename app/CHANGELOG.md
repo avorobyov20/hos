@@ -1,3 +1,10 @@
+## [1.0.26](https://github.com/avorobyov20/hos/compare/1.0.25...1.0.26) (2023-03-10)
+
+
+### 🛠 Исправления
+
+* отключили запуск create_user для прода ([9524137](https://github.com/avorobyov20/hos/commit/95241375ca7456a963e7d3baa0f79291639e91db))
+
 ## [1.0.25](https://github.com/avorobyov20/hos/compare/1.0.24...1.0.25) (2023-03-10)
 
 
