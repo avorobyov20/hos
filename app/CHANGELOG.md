@@ -1,3 +1,10 @@
+## [1.0.27](https://github.com/avorobyov20/hos/compare/1.0.26...1.0.27) (2023-03-10)
+
+
+### 🛠 Исправления
+
+* временно включен DEBUG для прода ([8cf05b7](https://github.com/avorobyov20/hos/commit/8cf05b723cd926688652cfb2ef0b0e32d8d3a3bd))
+
 ## [1.0.26](https://github.com/avorobyov20/hos/compare/1.0.25...1.0.26) (2023-03-10)
 
 
