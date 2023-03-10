@@ -1,3 +1,10 @@
+## [1.0.25](https://github.com/avorobyov20/hos/compare/1.0.24...1.0.25) (2023-03-10)
+
+
+### 🛠 Исправления
+
+* package.json devDependencies ([f93bfa8](https://github.com/avorobyov20/hos/commit/f93bfa8a2fe224eb37c8eacaed139c13f2696fd3))
+
 ## [1.0.24](https://github.com/avorobyov20/hos/compare/1.0.23...1.0.24) (2023-03-09)
 
 
