@@ -160,5 +160,5 @@ else:
         "http://localhost:1337",
     ]
 
-SERVICE_NAME = "Основной модуль"
-HOST_NAME = "Тест"
+SERVICE_NAME = "Slow music for fast times"
+HOST_NAME = "HOS"
