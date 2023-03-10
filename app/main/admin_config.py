@@ -32,7 +32,7 @@ class CustomAdmin(admin.AdminSite):
             logging.error(
                 "Ошибка при загрузке файла %s: %s", self.version_file, error
             )
-            #  return {}
+            return {}
 
     def each_context(self, request):
         site_data = super().each_context(request)
