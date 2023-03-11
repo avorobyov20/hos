@@ -15,4 +15,11 @@ fi
 # Выполняем миграции
 python manage.py migrate
 
+FIXTURES_LOADED =`echo "from django.contrib.auth import get_user_model; print(get_user_model().objects.filter(username='admin').exists())" | sudo docker-compose -f docker-compose.prod.yml exec -T web python manage.py shell`
+if [ "$FIXTURES_LOADED" = "False" ]
+then
+    python manage.py loaddata db.json
+    python manage.py create_user
+fi
+
 exec "$@"
