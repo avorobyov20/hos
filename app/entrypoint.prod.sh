@@ -12,4 +12,7 @@ then
     echo "Postgres is running"
 fi
 
+# Выполняем миграции
+python manage.py migrate
+
 exec "$@"
