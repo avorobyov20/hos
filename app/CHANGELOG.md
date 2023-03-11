@@ -1,3 +1,10 @@
+## [1.0.42](https://github.com/avorobyov20/hos/compare/1.0.41...1.0.42) (2023-03-11)
+
+
+### 🛠 Исправления
+
+* [#5665](https://my.atlassian.net/#/Task/5665) $fixtures ([f4e9986](https://github.com/avorobyov20/hos/commit/f4e9986d676e6fc559a229a0f278202db1aee514))
+
 ## [1.0.41](https://github.com/avorobyov20/hos/compare/1.0.40...1.0.41) (2023-03-11)
 
 
