@@ -22,6 +22,7 @@
     sudo docker-compose -f docker-compose.prod.yml up -d --build
     sudo docker-compose -f docker-compose.prod.yml exec web python manage.py collectstatic --no-input --clear
     sudo docker-compose -f docker-compose.prod.yml exec web python manage.py migrate --noinput
+    # sudo docker-compose -f docker-compose.prod.yml exec db psql --username=django_user --dbname=django_db -c "select count(*) from main_advuser where username='admin';"
     # sudo docker-compose -f docker-compose.prod.yml exec web python manage.py loaddata db.json
     # sudo docker-compose -f docker-compose.prod.yml exec web python manage.py create_user
   tags:
