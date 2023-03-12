@@ -11,6 +11,7 @@ sudo apt-add-repository ppa:ansible/ansible
 sudo apt-get update
 sudo apt-get install ansible
 
+document.querySelector('.hos-active-pl').lastChild.click();
 
 
 if [[ $(sudo docker-compose -f docker-compose.prod.yml exec db psql --username=django_user --dbname=django_db -c "select count(*) from main_advuser where username='admin';") = *"0"* ]]; then echo $(sudo docker-compose -f docker-compose.prod.yml exec web python manage.py loaddata db.json); fi
