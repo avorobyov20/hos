@@ -12,8 +12,8 @@ then
     echo "Postgres is running"
 fi
 
-# Выполняем миграции
-python manage.py migrate
+python manage.py collectstatic --noinput --clear
+python manage.py migrate --noinput
 
 FIXTURES_LOADED=`echo "from django.contrib.auth import get_user_model; print(get_user_model().objects.filter(username='admin').exists())" | python manage.py shell`
 if [ "$FIXTURES_LOADED" = "False" ]
