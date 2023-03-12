@@ -1,3 +1,10 @@
+## [1.0.48](https://github.com/avorobyov20/hos/compare/1.0.47...1.0.48) (2023-03-12)
+
+
+### 🛠 Исправления
+
+* [#7897887](https://my.atlassian.net/#/Task/7897887) test ([2a3d3c1](https://github.com/avorobyov20/hos/commit/2a3d3c17a6a44af02780f4344b95a0e0f542eb45))
+
 ## [1.0.47](https://github.com/avorobyov20/hos/compare/1.0.46...1.0.47) (2023-03-12)
 
 
