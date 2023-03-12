@@ -1,3 +1,10 @@
+## [1.0.47](https://github.com/avorobyov20/hos/compare/1.0.46...1.0.47) (2023-03-12)
+
+
+### 🛠 Исправления
+
+* [#6547](https://my.atlassian.net/#/Task/6547) новый jenkins ([969ee43](https://github.com/avorobyov20/hos/commit/969ee438094c97c0af50b6d5eab861856880678d))
+
 ## [1.0.46](https://github.com/avorobyov20/hos/compare/1.0.45...1.0.46) (2023-03-12)
 
 
