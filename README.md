@@ -7,6 +7,10 @@ Enter file in which to save the key (/home/vagrant/.ssh/id_rsa): jenkins2
 -rw-r--r-- 1 vagrant vagrant  574 Mar 12 09:11 jenkins2.pub
 vagrant@ubuntu-focal:~$
 
+sudo apt-add-repository ppa:ansible/ansible
+sudo apt-get update
+sudo apt-get install ansible
+
 
 if [[ $(sudo docker-compose -f docker-compose.prod.yml exec db psql --username=django_user --dbname=django_db -c "select count(*) from main_advuser where username='admin';") = *"0"* ]]; then echo $(sudo docker-compose -f docker-compose.prod.yml exec web python manage.py loaddata db.json); fi
 
