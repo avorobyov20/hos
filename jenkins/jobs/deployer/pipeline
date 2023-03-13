@@ -21,14 +21,14 @@ pipeline {
         stage('Deploy') {
             steps {
                 withCredentials([sshUserPrivateKey(credentialsId: 'github-ssh-key', keyFileVariable: 'PRIVATE')]) {
-                  sh "ssh -i ${PRIVATE} vagrant@${SERVER_IP} 'rm -rf ~/hos/'"
-                  sh "ssh -i ${PRIVATE} vagrant@${SERVER_IP} 'mkdir ~/hos'"
-                  sh "scp -i ${PRIVATE} -r ${WORKSPACE}/app vagrant@${SERVER_IP}:~/hos/app/"
-                  sh "scp -i ${PRIVATE} -r ${WORKSPACE}/nginx vagrant@${SERVER_IP}:~/hos/nginx/"
-                  sh "scp -i ${PRIVATE} -r ${WORKSPACE}/provisioning vagrant@${SERVER_IP}:~/hos/provisioning/"
-                  sh "scp -i ${PRIVATE} ${WORKSPACE}/.env.prod vagrant@${SERVER_IP}:~/hos/"
-                  sh "scp -i ${PRIVATE} ${WORKSPACE}/.env.prod.db vagrant@${SERVER_IP}:~/hos/"
-                  sh "scp -i ${PRIVATE} ${WORKSPACE}/docker-compose.prod.yml vagrant@${SERVER_IP}:~/hos/"
+                  sh "ssh -i ${PRIVATE} vagrant@${SERVER_IP} 'rm -rf ~/project/'"
+                  sh "ssh -i ${PRIVATE} vagrant@${SERVER_IP} 'mkdir ~/project'"
+                  sh "scp -i ${PRIVATE} -r ${WORKSPACE}/app vagrant@${SERVER_IP}:~/project/app/"
+                  sh "scp -i ${PRIVATE} -r ${WORKSPACE}/nginx vagrant@${SERVER_IP}:~/project/nginx/"
+                  sh "scp -i ${PRIVATE} -r ${WORKSPACE}/provisioning vagrant@${SERVER_IP}:~/project/provisioning/"
+                  sh "scp -i ${PRIVATE} ${WORKSPACE}/.env.prod vagrant@${SERVER_IP}:~/project/"
+                  sh "scp -i ${PRIVATE} ${WORKSPACE}/.env.prod.db vagrant@${SERVER_IP}:~/project/"
+                  sh "scp -i ${PRIVATE} ${WORKSPACE}/docker-compose.prod.yml vagrant@${SERVER_IP}:~/project/"
                   sh "ansible-playbook provisioning/site.yml -i provisioning/hosts.yml --private-key $PRIVATE"
                 }
             }
