@@ -1,3 +1,10 @@
+## [1.0.50](https://github.com/avorobyov20/hos/compare/1.0.49...1.0.50) (2023-03-13)
+
+
+### 🛠 Исправления
+
+* [#67567](https://my.atlassian.net/#/Task/67567) GIT_URL ([f147945](https://github.com/avorobyov20/hos/commit/f1479457671429091734410ac0875a1f882b36d8))
+
 ## [1.0.49](https://github.com/avorobyov20/hos/compare/1.0.48...1.0.49) (2023-03-13)
 
 
