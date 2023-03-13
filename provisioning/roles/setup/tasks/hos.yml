@@ -5,7 +5,7 @@
 # Разворачиваем контейнеризированное приложение
 - name: Run app
   shell: |
-    cd "/home/{{ remote_user }}/hos/"
+    cd "/home/{{ remote_user }}/project/"
     sudo echo "CSRF_TRUSTED_ORIGINS=http://localhost:1337 http://{{ ansible_host }}:1337 http://{{ site_name }}:1337" >> .env.prod
     sudo docker-compose -f docker-compose.prod.yml down
     sudo docker-compose -f docker-compose.prod.yml up -d --build
