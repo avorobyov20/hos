@@ -12,9 +12,9 @@
 - name: Import docker tasks
   include_tasks: docker.yml
 
-# Import hos tasks
-- name: Import hos tasks
-  include_tasks: hos.yml
+# Import project tasks
+- name: Import project tasks
+  include_tasks: project.yml
 
 # sudo apt-get autoclean
 - name: Remove useless apt packages from the cache
