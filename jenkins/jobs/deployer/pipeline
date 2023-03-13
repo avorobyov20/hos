@@ -10,9 +10,9 @@ pipeline {
                 sh "rm -f ${WORKSPACE}/.env.prod*"
                 script {
                     if ("${RELEASE}" == "master") {
-                        git branch: "master", url: "git@github.com:avorobyov20/hos.git", credentialsId: "github-ssh-key"
+                        git branch: "master", url: "${GIT_URL}", credentialsId: "github-ssh-key"
                     } else {
-                        checkout scm: [$class: "GitSCM", userRemoteConfigs: [[url: "git@github.com:avorobyov20/hos.git", credentialsId: "github-ssh-key" ]], branches: [[name: "refs/tags/${RELEASE}"]]], poll: false
+                        checkout scm: [$class: "GitSCM", userRemoteConfigs: [[url: "${GIT_URL}", credentialsId: "github-ssh-key" ]], branches: [[name: "refs/tags/${RELEASE}"]]], poll: false
                     }
                 }
                 sh "echo '      ansible_host: ${SERVER_IP}' >> ${WORKSPACE}/provisioning/hosts.yml"
