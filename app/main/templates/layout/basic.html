@@ -23,7 +23,7 @@
     <script src="{% static 'index.js' %}"></script>
 </head>
 
-<body onpageshow="if (!!document.getElementById('hos-search')) hossearch_onkeyup((!!document.getElementById('hos-switch')) ? document.getElementById('hos-switch').querySelector('input:checked').nextElementSibling.getAttribute('for') : 'hos-switch-all');">
+<body onpageshow="if (!!document.getElementById('hos-search')) {hossearch_onkeyup((!!document.getElementById('hos-switch')) ? document.getElementById('hos-switch').querySelector('input:checked').nextElementSibling.getAttribute('for') : 'hos-switch-all'); document.querySelector('.hos-active-pl').lastChild.click(); console.log('onpageshow');}">
 
     <div class="hos-topnav">
 
