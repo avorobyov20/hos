@@ -30,12 +30,14 @@ sudo apt install fontconfig openjdk-11-jre
 sudo apt install jenkins=2.387.1
 
 sudo apt install xclip
-xclip -o > file.txt
-sudo cat /var/lib/jenkins/secrets/initialAdminPassword | xclips
 
-echo admin:$(sudo cat /var/lib/jenkins/secrets/initialAdminPassword) > creds
-
+# Забираем пароль пользователя admin в клипборд
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword | xclip
+# логинимся
 http://192.168.0.10:8080/
+
+echo admin:$(sudo cat /var/lib/jenkins/secrets/initialAdminPassword) > cred
+java -jar jenkins-cli.jar -auth $(cat cred) -s http://localhost:8080/ who-am-i
 
 Нажать "Select plugins to install"
 Нажать "None" (все галки очистятся)
