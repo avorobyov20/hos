@@ -56,6 +56,7 @@ wget http://192.168.0.10:8080/jnlpJars/jenkins-cli.jar
 user="avorobyov2"
 pass="***"
 
+java -jar jenkins-cli.jar -auth $user:$pass -s http://192.168.0.10:8080/ -webSocket install-plugin https://updates.jenkins.io/download/plugins/locale/226.v008e1b_58cb_b_0/locale.hpi
 
 java -jar jenkins-cli.jar -auth $user:$pass -s http://192.168.0.10:8080/ -webSocket install-plugin https://updates.jenkins.io/download/plugins/script-security/1228.vd93135a_2fb_25/script-security.hpi
 java -jar jenkins-cli.jar -auth $user:$pass -s http://192.168.0.10:8080/ -webSocket install-plugin https://updates.jenkins.io/download/plugins/extended-choice-parameter/359.v35dcfdd0c20d/extended-choice-parameter.hpi
