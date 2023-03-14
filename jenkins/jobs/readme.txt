@@ -27,8 +27,7 @@ echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
 
 sudo apt-get update
 sudo apt-get install fontconfig openjdk-11-jre
-sudo apt-get install jenkins=2.361.1
-2.387.1
+sudo apt-get install jenkins=2.387.1
 
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 66863d75cd4244caadf4a43c05ccc323
@@ -65,13 +64,9 @@ java -jar jenkins-cli.jar -auth $user:$pass -s http://192.168.0.10:8080/ -webSoc
 java -jar jenkins-cli.jar -auth $user:$pass -s http://192.168.0.10:8080/ -webSocket install-plugin https://updates.jenkins.io/download/plugins/pipeline-rest-api/2.31/pipeline-rest-api.hpi
 
 java -jar jenkins-cli.jar -auth $user:$pass -s http://192.168.0.10:8080/ -webSocket install-plugin https://updates.jenkins.io/download/plugins/commons-lang3-api/3.12.0-36.vd97de6465d5b_/commons-lang3-api.hpi
-
 java -jar jenkins-cli.jar -auth $user:$pass -s http://192.168.0.10:8080/ -webSocket install-plugin https://updates.jenkins.io/download/plugins/credentials/1189.vf61b_a_5e2f62e/credentials.hpi
-
 java -jar jenkins-cli.jar -auth $user:$pass -s http://192.168.0.10:8080/ -webSocket install-plugin https://updates.jenkins.io/download/plugins/display-url-api/2.3.7/display-url-api.hpi
-
 java -jar jenkins-cli.jar -auth $user:$pass -s http://192.168.0.10:8080/ -webSocket install-plugin https://updates.jenkins.io/download/plugins/okhttp-api/4.9.3-108.v0feda04578cf/okhttp-api.hpi
-
 java -jar jenkins-cli.jar -auth $user:$pass -s http://192.168.0.10:8080/ -webSocket install-plugin https://updates.jenkins.io/download/plugins/github/1.37.0/github.hpi
 
 java -jar jenkins-cli.jar -auth $user:$pass -s http://192.168.0.10:8080/ -webSocket install-plugin https://updates.jenkins.io/download/plugins/workflow-scm-step/400.v6b_89a_1317c9a_/workflow-scm-step.hpi
