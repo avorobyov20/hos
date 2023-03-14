@@ -11,7 +11,7 @@
   </actions>
   <description>Отвечает за установку требуемого релиза на конкретный сервер.&#xd;
 &#xd;
-Имеет два обязательных Extended Choice parameter radio buttons: RELEASE и SERVER_IP, опции для которых&#xd;
+Имеет два обязательных параметра Extended Choice parameter radio buttons: RELEASE и SERVER_IP, опции для которых&#xd;
 загружаются из файла params.file, автоматически обновляемого джобом &quot;webhook_catcher&quot;.&#xd;
 &#xd;
 vagrant@ubuntu-focal:/var/lib/jenkins/workspace$ cat params.file&#xd;
