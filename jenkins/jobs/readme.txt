@@ -51,6 +51,15 @@ http://192.168.0.10:8080/
 Возвращаемся в консоль
 wget http://192.168.0.10:8080/jnlpJars/jenkins-cli.jar
 
+locale:226.v008e1b_58cb_b_0
+github:1.37.0
+git:5.0.0
+extended-choice-parameter:359.v35dcfdd0c20d
+workflow-cps:3641.vf58904a_b_b_5d8
+ws-cleanup:0.44
+workflow-job:1282.ve6d865025906
+pipeline-stage-view:2.31
+
 java -jar jenkins-cli.jar -auth $user:$pass -s http://localhost:8080 create-job webhook_catcher < webhook_catcher.xml
 java -jar jenkins-cli.jar -auth $user:$pass -s http://localhost:8080 create-job deployer < deployer.xml
 
