@@ -76,7 +76,6 @@ java -jar jenkins-cli.jar -auth $user:$pass -s http://192.168.0.10:8080/ -webSoc
 
 
 java -jar jenkins-cli.jar -auth $user:$pass -s http://192.168.0.10:8080/ -webSocket install-plugin https://updates.jenkins.io/download/plugins/token-macro/321.vd7cc1f2a_52c8/token-macro.hpi
-java -jar jenkins-cli.jar -auth $user:$pass -s http://192.168.0.10:8080/ -webSocket install-plugin https://updates.jenkins.io/download/plugins/plain-credentials/143.v1b_df8b_d3b_e48/plain-credentials.hpi
 java -jar jenkins-cli.jar -auth $user:$pass -s http://192.168.0.10:8080/ -webSocket install-plugin https://updates.jenkins.io/download/plugins/github-api/1.303-400.v35c2d8258028/github-api.hpi
 java -jar jenkins-cli.jar -auth $user:$pass -s http://192.168.0.10:8080/ -webSocket install-plugin https://updates.jenkins.io/download/plugins/github/1.37.0/github.hpi
 
@@ -88,7 +87,7 @@ java -jar jenkins-cli.jar -auth $user:$pass -s http://192.168.0.10:8080/ -webSoc
 java -jar jenkins-cli.jar -auth $user:$pass -s http://192.168.0.10:8080/ -webSocket install-plugin https://updates.jenkins.io/download/plugins/ssh-credentials/305.v8f4381501156/ssh-credentials.hpi
 java -jar jenkins-cli.jar -auth $user:$pass -s http://192.168.0.10:8080/ -webSocket install-plugin https://updates.jenkins.io/download/plugins/workflow-step-api/639.v6eca_cd8c04a_a_/workflow-step-api.hpi
 java -jar jenkins-cli.jar -auth $user:$pass -s http://192.168.0.10:8080/ -webSocket install-plugin https://updates.jenkins.io/download/plugins/scm-api/631.v9143df5b_e4a_a/scm-api.hpi
-java -jar jenkins-cli.jar -auth $user:$pass -s http://192.168.0.10:8080/ -webSocket install-plugin https://updates.jenkins.io/download/plugins/plain-credentials/1.8/plain-credentials.hpi
+java -jar jenkins-cli.jar -auth $user:$pass -s http://192.168.0.10:8080/ -webSocket install-plugin https://updates.jenkins.io/download/plugins/plain-credentials/143.v1b_df8b_d3b_e48/plain-credentials.hpi
 java -jar jenkins-cli.jar -auth $user:$pass -s http://192.168.0.10:8080/ -webSocket install-plugin https://updates.jenkins.io/download/plugins/credentials-binding/523.vd859a_4b_122e6/credentials-binding.hpi
 java -jar jenkins-cli.jar -auth $user:$pass -s http://192.168.0.10:8080/ -webSocket install-plugin https://updates.jenkins.io/download/plugins/jsch/0.1.55.61.va_e9ee26616e7/jsch.hpi
 java -jar jenkins-cli.jar -auth $user:$pass -s http://192.168.0.10:8080/ -webSocket install-plugin https://updates.jenkins.io/download/plugins/apache-httpcomponents-client-4-api/4.5.13-138.v4e7d9a_7b_a_e61/apache-httpcomponents-client-4-api.hpi
