@@ -1,4 +1,5 @@
 https://www.jenkins.io/download/
+sudo apt-get install jenkins=2.361.1
 https://stackoverflow.com/questions/12350707/jenkins-in-windows-shows-ui-in-russian-language
 
 vagrant@ubuntu-focal:~$ ssh-keygen
