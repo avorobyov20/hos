@@ -69,4 +69,5 @@ java -jar jenkins-cli.jar -auth $user:$pass -s http://localhost:8080 create-job 
 java -jar jenkins-cli.jar -auth $user:$pass -s http://localhost:8080 create-job deployer < deployer.xml
 
 java -jar jenkins-cli.jar -auth $user:$pass -s http://192.168.0.10:8080/ -webSocket safe-restart
+java -jar jenkins-cli.jar -auth admin:$(sudo cat /var/lib/jenkins/secrets/initialAdminPassword) -s http://localhost:8080/ -webSocket safe-restart
 
