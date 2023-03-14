@@ -63,6 +63,9 @@ java -jar jenkins-cli.jar -auth $user:$pass -s http://192.168.0.10:8080/ -webSoc
 java -jar jenkins-cli.jar -auth $user:$pass -s http://192.168.0.10:8080/ -webSocket install-plugin https://updates.jenkins.io/download/plugins/extended-choice-parameter/359.v35dcfdd0c20d/extended-choice-parameter.hpi
 
 java -jar jenkins-cli.jar -auth $user:$pass -s http://192.168.0.10:8080/ -webSocket install-plugin https://updates.jenkins.io/download/plugins/workflow-api/1208.v0cc7c6e0da_9e/workflow-api.hpi
+java -jar jenkins-cli.jar -auth $user:$pass -s http://192.168.0.10:8080/ -webSocket install-plugin https://updates.jenkins.io/download/plugins/pipeline-input-step/466.v6d0a_5df34f81/pipeline-input-step.hpi
+java -jar jenkins-cli.jar -auth $user:$pass -s http://192.168.0.10:8080/ -webSocket install-plugin https://updates.jenkins.io/download/plugins/pipeline-stage-step/296.v5f6908f017a_5/pipeline-stage-step.hpi
+java -jar jenkins-cli.jar -auth $user:$pass -s http://192.168.0.10:8080/ -webSocket install-plugin https://updates.jenkins.io/download/plugins/pipeline-graph-analysis/202.va_d268e64deb_3/pipeline-graph-analysis.hpi
 java -jar jenkins-cli.jar -auth $user:$pass -s http://192.168.0.10:8080/ -webSocket install-plugin https://updates.jenkins.io/download/plugins/pipeline-rest-api/2.31/pipeline-rest-api.hpi
 
 java -jar jenkins-cli.jar -auth $user:$pass -s http://192.168.0.10:8080/ -webSocket install-plugin https://updates.jenkins.io/download/plugins/commons-lang3-api/3.12.0-36.vd97de6465d5b_/commons-lang3-api.hpi
@@ -74,8 +77,9 @@ java -jar jenkins-cli.jar -auth $user:$pass -s http://192.168.0.10:8080/ -webSoc
 
 java -jar jenkins-cli.jar -auth $user:$pass -s http://192.168.0.10:8080/ -webSocket install-plugin https://updates.jenkins.io/download/plugins/workflow-scm-step/400.v6b_89a_1317c9a_/workflow-scm-step.hpi
 java -jar jenkins-cli.jar -auth $user:$pass -s http://192.168.0.10:8080/ -webSocket install-plugin https://updates.jenkins.io/download/plugins/jakarta-mail-api/2.0.0-5/jakarta-mail-api.hpi
+java -jar jenkins-cli.jar -auth $user:$pass -s http://192.168.0.10:8080/ -webSocket install-plugin https://updates.jenkins.io/download/plugins/jakarta-activation-api/2.0.0-2/jakarta-activation-api.hpi
 java -jar jenkins-cli.jar -auth $user:$pass -s http://192.168.0.10:8080/ -webSocket install-plugin https://updates.jenkins.io/download/plugins/mailer/438.v02c7f0a_12fa_4/mailer.hpi
-java -jar jenkins-cli.jar -auth $user:$pass -s http://192.168.0.10:8080/ -webSocket install-plugin https://updates.jenkins.io/download/plugins/trilead-api/1.67.vc3938a_35172f/trilead-api.hpi
+java -jar jenkins-cli.jar -auth $user:$pass -s http://192.168.0.10:8080/ -webSocket install-plugin https://updates.jenkins.io/download/plugins/trilead-api/2.84.v72119de229b_7/trilead-api.hpi
 java -jar jenkins-cli.jar -auth $user:$pass -s http://192.168.0.10:8080/ -webSocket install-plugin https://updates.jenkins.io/download/plugins/ssh-credentials/305.v8f4381501156/ssh-credentials.hpi
 java -jar jenkins-cli.jar -auth $user:$pass -s http://192.168.0.10:8080/ -webSocket install-plugin https://updates.jenkins.io/download/plugins/workflow-step-api/639.v6eca_cd8c04a_a_/workflow-step-api.hpi
 java -jar jenkins-cli.jar -auth $user:$pass -s http://192.168.0.10:8080/ -webSocket install-plugin https://updates.jenkins.io/download/plugins/scm-api/631.v9143df5b_e4a_a/scm-api.hpi
