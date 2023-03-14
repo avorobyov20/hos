@@ -28,11 +28,34 @@ echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
 sudo apt-get update
 sudo apt-get install fontconfig openjdk-11-jre
 sudo apt-get install jenkins=2.361.1
+2.387.1
+
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+66863d75cd4244caadf4a43c05ccc323
+
+http://192.168.0.10:8080/
+
+Нажать "Select plugins to install"
+Нажать "None" (все галки очистятся)
+Находим плагин "Locale"
+Жмем "Install"
+Создаем пользователя
+Жмем "Save and Finish"
+Жмем "Start using Jenkins"
+
+Жмем "Настроить Jenkins"
+Жмем "Конфигурация системы"
+Количество сборщиков = 1
+В разделе "Locale" заполняем "Default Language" значением en
+Ставим галку [v] Ignore browser preference and force this language to all users
+Нажимаем "Сохранить". Интерфейс переключится на английский язык
+Идем "Manage Jenkins" > "Jenkins CLI"
+Копируем ссылку на jenkins-cli.jar
+Возвращаемся в консоль
+wget http://192.168.0.10:8080/jnlpJars/jenkins-cli.jar
 
 user="avorobyov2"
 pass="***"
-
-java -jar jenkins-cli.jar -auth $user:$pass -s http://192.168.0.10:8080/ -webSocket install-plugin https://updates.jenkins.io/download/plugins/locale/226.v008e1b_58cb_b_0/locale.hpi
 
 java -jar jenkins-cli.jar -auth $user:$pass -s http://192.168.0.10:8080/ -webSocket install-plugin https://updates.jenkins.io/download/plugins/github/1.37.0/github.hpi
 
