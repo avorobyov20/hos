@@ -27,7 +27,7 @@ echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
 
 sudo apt update
 sudo apt install fontconfig openjdk-11-jre
-sudo apt install jenkins
+sudo apt install jenkins=2.387.1
 
 sudo apt install xclip
 xclip -o > file.txt
