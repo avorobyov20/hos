@@ -29,7 +29,12 @@ sudo apt update
 sudo apt install fontconfig openjdk-11-jre
 sudo apt install jenkins
 
+sudo apt install xclip
+xclip -o > file.txt
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword | xclips
+
 echo admin:$(sudo cat /var/lib/jenkins/secrets/initialAdminPassword) > creds
+
 http://192.168.0.10:8080/
 
 Нажать "Select plugins to install"
