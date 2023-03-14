@@ -71,3 +71,7 @@ java -jar jenkins-cli.jar -auth $user:$pass -s http://localhost:8080 create-job 
 java -jar jenkins-cli.jar -auth $user:$pass -s http://192.168.0.10:8080/ -webSocket safe-restart
 java -jar jenkins-cli.jar -auth admin:$(sudo cat /var/lib/jenkins/secrets/initialAdminPassword) -s http://localhost:8080/ -webSocket safe-restart
 
+sudo su
+ssh-keyscan -t rsa github.com >> /var/lib/jenkins/.ssh/known_hosts
+exit
+
